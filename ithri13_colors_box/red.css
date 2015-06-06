@@ -1,0 +1,181 @@
+@import url(style.css);
+
+
+
+#header {
+    margin :                0;
+    padding :               0;
+    height:                 110px;
+    background:             url(images/red/xo-banner_bg.gif) center ;
+    color:                  #fff;
+    
+}
+
+/* --------- Navigation menu --------- */
+
+.nav {
+	background: #fff url(images/menuh/nav_bg_r.png) repeat-x;
+	
+		}
+.nav li {
+	background: url(images/menuh/split_r.png) no-repeat right center;
+	
+}
+/* --------- End Navigation menu --------- */	
+	
+
+
+
+#leftcolumn .blockTitle, #rightcolumn .blockTitle {		
+	
+	background-image: url(images/red/left.gif);
+	background-repeat: repeat-x;
+	background-position: left top; }
+	
+	
+#centercolumn{}
+
+#centercolumn  .blockTitle {	color:#b90100;
+	font-weight: bold;
+	margin-top: 3px;
+    background-image: url(images/red/bg_banner.gif); background-repeat: repeat-x;  }
+
+#centercolumn th {
+	background-color: #9B0004;
+	border-bottom-color: #640002;
+}
+#centercolumn th a { color: #FFFFFF;}
+
+
+#mainmenu a {
+	display: block;
+	background-image: url(images/red/santa.png);
+	background-repeat: no-repeat;
+	margin: 0; 
+	padding: 5px;  
+	font-size: .9em; 
+	font-weight: bold
+}
+#mainmenu a:hover {background-color: #fff;}
+#mainmenu a.menuTop {padding-left: 5px; }
+#mainmenu a.menuMain {padding-left: 5px;}
+#mainmenu a.menuSub {padding-left: 11px; color:#2A75C5;
+}
+#mainmenu a:hover {
+	text-decoration: none;
+	
+}
+#mainmenu a.menuTop, #mainmenu a.menuMain {padding-left: 16px; }
+#mainmenu a.menuTop {
+	border-top-style: none;
+}
+#mainmenu a.menuSub {
+	padding-left: 25px;
+	color: #636a6f;
+}
+#usermenu {
+	padding:4px;
+	font-size : .9em; 
+	font-weight: bold  
+	
+	}
+#usermenu a {
+	background-color: ; 
+	display: block; 
+	margin: 0; 
+	padding: 4px;  
+	font-weight : normal;
+}
+
+
+a {color: #b90100; }
+
+
+
+li {	color: #666666; }
+
+.itemHead { color: #000000;}
+.itemTitle a {font-size: 1.1em; font-weight: bold;  color: #b90100; }
+
+
+.head {
+	background-color: #9B0004;
+	
+}
+.head a {
+	color: #EBC5E3;
+}
+
+
+.even {
+}
+
+/*td.even:hover, tr.even td:hover, .odd:hover, tr.odd td:hover {
+	background-color: #F4FAFF;
+}
+*/
+}
+
+.odd {
+	
+	
+}
+.foot {
+	padding: 2px;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+
+
+#footerbar { 
+	background:  url(images/red/footer.gif) center; 
+	font-size:1em;
+    font-weight: bold;	
+	height : 40px;
+	color: #FFFFFF;
+	}
+#footerbar td { vertical-align : middle; text-align:center;}
+
+#footerbar a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+#footerbar a:hover {
+	color: #000000;
+}
+
+/*============== Styles for pagenav =================*/
+#xo-pagenav {
+    margin:                 7px 0;
+    text-align:             center;
+    font-size:              1.05em;
+}
+#xo-pagenav a {
+    text-decoration:        none;
+}
+#xo-pagenav a:hover {
+    color:                  #fff;
+    background-color:       #8B4789;
+    border:                 1px solid #fff;
+}
+.xo-pagact {
+    margin:                 0;
+    padding:                .2em .5em;
+    color:                  #fff;
+    background-color:        #8B4789;
+    border:                 1px solid #fff;
+}
+.xo-counterpage, .xo-pagarrow {
+    margin:                 0;
+    padding:                .2em .5em;
+    color:                  #000;
+    background-color:       #fff;
+    border:                 1px solid #000;
+}
+.xo-counterpage:hover {}
+.xo-pagarrow {
+    letter-spacing:         0.2em;
+}

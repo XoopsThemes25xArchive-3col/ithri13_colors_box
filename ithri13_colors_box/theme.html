@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+ 
+   		
+ <!-- Title and meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+    <meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+    <title><{if $xoops_pagetitle !=''}><{$xoops_pagetitle}> - <{/if}><{$xoops_sitename}></title>
+    <meta name="robots" content="<{$xoops_meta_robots}>" />
+    <meta name="keywords" content="<{$xoops_meta_keywords}>" />
+    <meta name="description" content="<{$xoops_meta_description}>" />
+    <meta name="rating" content="<{$xoops_meta_rating}>" />
+    <meta name="author" content="<{$xoops_meta_author}>" />
+    <meta name="copyright" content="<{$xoops_meta_copyright}>" />
+    <meta name="generator" content="XOOPS" />
+    <!-- Rss -->
+    <link rel="alternate" type="application/rss+xml" title="" href="<{xoAppUrl backend.php}>" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/ico" href="<{xoImgUrl images/icons/favicon.ico}>" />
+    <link rel="icon" type="image/png" href="<{xoImgUrl images/icons/favicon.png}>" />
+    <!-- Sheet Css -->
+    <link rel="stylesheet" type="text/css" media="all" title="Style sheet" href="<{xoAppUrl xoops.css}>" />
+    <link rel="stylesheet" type="text/css" media="all" title="Style sheet" href="<{xoImgUrl style.css}>" />
+	 <!-- Script pou les couleurs-->
+	<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/xoops.css" />
+    <link rel="stylesheet" type="text/css" media="all" title="ithri" href="<{xoImgUrl /blue.css}>" />
+	<link rel="alternate stylesheet" type="text/css" media="all" title="ithri-brown" href="<{xoImgUrl /brown.css}>" />
+	<link rel="alternate stylesheet" type="text/css" media="all" title="ithri-purple" href="<{xoImgUrl /purple.css}>" />
+    <link rel="alternate stylesheet" type="text/css" title="ithri-red" href="<{xoImgUrl /red.css}>" />
+    <link rel="alternate stylesheet" type="text/css" title="ithri-blue" href="<{xoImgUrl /style.css}>" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- header contents -->
+    <{$xoops_module_header}>
+	
+	
+</head>
+<body id="<{$xoops_dirname}>" class="<{$xoops_langcode}>">
+<div class="wrapper"> 
+    <!-- Assign Theme name -->
+    <{assign var=theme_name value=$xoTheme->folderName}>
+	
+
+	
+    <script type="text/javascript" src="<{$xoops_url}>/themes/ithri_13_colors_box/js/jquery.js"></script>	
+	<script type="text/javascript" src="<{xoImgUrl js/styleswitcher.js}>"></script>
+	<script type="text/javascript" src="<{xoImgUrl js/animations.js}>"></script>
+	
+	
+
+	<table  cellspacing="3" id="color-styles" align="right">
+      <tr>
+        <td><a href="#" onclick="setActiveStyleSheet('ithri-blue'); return false;"><img src="<{xoImgUrl images/green/style-green.gif}>" alt="style green" width="10" height="10" border="0" /></a></td>
+		<td><a href="#" onclick="setActiveStyleSheet('ithri-brown'); return false;"><img src="<{xoImgUrl images/green/style-brown.gif}>" alt="style brown" width="10" height="10" border="0" /></a></td>
+		<td><a href="#" onclick="setActiveStyleSheet('ithri-purple'); return false;"><img src="<{xoImgUrl images/green/style-purple.gif}>" alt="style purple" width="10" height="10" border="0" /></a></td>
+        <td><a href="#" onclick="setActiveStyleSheet('ithri-red'); return false;"><img src="<{xoImgUrl images/green/style-red.gif}>" alt="style red" width="10" height="10" border="0" /></a></td>
+        <td><a href="#" onclick="setActiveStyleSheet('ithri'); return false;"><img src="<{xoImgUrl images/green/style-blue.gif}>" alt="style blue" width="10" height="10" border="0" /></a></td>
+		 </table>
+      </tr>
+	 
+
+
+
+
+	 
+<!------------------------------------------------------------------ Menu utilisateur ---------------------------------------------------------->
+
+<div id="xo-userbar">
+	<{if !$xoops_isuser}>
+		<!-- menu en mode anonyme -->
+		<form method="post" action="<{xoAppUrl /user.php op=login}>">
+		<input name="uname" type="text"  /><input name="pass" type="password"/>
+		<input type="hidden" name="xoops_redirect" value="<{$smarty.server.REQUEST_URI}>" />
+		<button type="submit"><img src="<{xoImgUrl images/users/home.png}>" alt="<{$smarty.const._LOGIN}>" /></button>		
+		<a href="<{xoAppUrl /register.php}>" class="register" >=S'enregister=</a>
+		<{if $lang_siteclosemsg}>
+		<input type="hidden" name="xoops_login" value="1" />
+		<{/if}>	
+		</form>
+		
+	<{else}>
+		<!-- menu en mode enregistré -->
+	      <!-- pour ma messagerie -->
+		<{xoInboxCount assign=pmcount}>
+		<a href="<{xoAppUrl viewpmsg.php}>">
+		<{if $pmcount}>
+			<!-- si j'ai des messages -->
+			<img src="<{xoImgUrl images/users/inbox-full.png}>" title="Nouveau message" alt="Nouveau message"/>
+		<{else}>
+			<!-- si je n'ai pas de message -->
+			<img src="<{xoImgUrl images/users/inbox.png}>" title="Pas de message" alt="Pas de message"/>
+		<{/if}>
+		</a>
+		<!-- fin de ma messagerie -->
+		<a href="<{xoAppUrl /notifications.php}>" title="Notifications"><img src="<{xoImgUrl images/users/note_view.png}>" alt="Voir ses notifications"/></a>
+		<a href="<{xoAppUrl /user.php}>" title="Mon profil"><img src="<{xoImgUrl images/users/profile.png}>" alt="Mon profil"/></a>
+		<a href="<{xoAppUrl /search.php}>" title="Rechercher"><img src="<{xoImgUrl images/users/find.png}>" alt="Rechercher" /></a>
+
+		<!-- lien supplémentaire si j'ai des droits d'administration de module -->
+		<{if $xoops_isadmin}>
+			<a href="<{xoAppUrl /admin.php}>" title="Administration"><img src="<{xoImgUrl images/users/configuration.png}>" alt="Administration" /></a>
+		<{/if}>
+ 		<a href="<{xoAppUrl /user.php op=logout}>" title="Quitter" ><img src="<{xoImgUrl images/users/exit.png}>" alt="Quitter"/></a>
+	<{/if}>
+</div>
+
+
+
+   
+     <!-- Start Header -->
+<table cellspacing="0" >
+    <tr id="header">
+        <td id="headerlogo"><a href="<{xoAppUrl /}>" title="<{$xoops_sitename}>"><img src="<{xoImgUrl images/green/xoops-logo.png}>" alt="<{$xoops_sitename}>" /></a></td>
+        <td id="headerbanner"><{$xoops_banner}></td>
+    </tr>
+	
+		</table>
+	
+	
+	
+	
+
+	<table cellspacing="0">
+	<tr>
+      <td id="boxes" width="840" style="height: 100"  >
+		<table   cellspacing="0"  border="0" width="100%">
+			<tr>
+				<td><div class="boxgrid slideright">
+				<img class="cover" src="<{xoImgUrl /boxes/vision.jpg}>" alt="About Us"/>
+				<h3><font color="#CDB55B"><span lang="en-us">About Us</span></font></h3>
+				<p><font color="#CDB55B"><i><font size="2" face="Arial">MAITSCO 
+				is a multimedia design company that provides total solutions to 
+				your multimedia needs</font></i></font><br/>
+				<a href="http://www.maitsco.com/"><span lang="en-us">more</span></a></p>
+			</div></td>
+				<td><div class="boxgrid slideright">
+				<img class="cover" src="<{xoImgUrl /boxes/xoops.jpg}>" alt="XOOPS Themes"/>
+				<h3><font color="#CDB55B"><span lang="en-us">XOOPS Services</span></font></h3>
+				<p><font size="2" face="Tahoma">Maitsco&nbsp; can create for you 
+				unique custom XOOPS themes according to your special 
+				requirements. With high quality graphics</font><br/>
+				<a href="http://www.maitsco.com/english/modules/contact">
+				<span lang="en-us">more</span></a></p>
+			</div></td>
+				<td><div class="boxgrid slideright">
+				<img class="cover" src="<{xoImgUrl /boxes/web.jpg}>" alt="Websites Solutions"/>
+				<h3><font color="#CDB55B"><span lang="en-us">Websites Services</span></font></h3>
+				<p><font size="2" face="Arial" color="#DDFFDF">Developing a 
+				 website incorporates a combination of quality 
+				content, dynamic programming, and powerful graphics</font><br/>
+				<a href="http://www.maitsco.com/english/modules/contact">
+				<span lang="en-us">more</span></a></p>
+			</div></td>
+			</tr>
+		</table>
+        </td>
+</tr>
+	
+	</table>
+	
+	
+
+	
+	<!------------------------------------------------------------------------------------------ Menu horisontal--------------------------------------------------------------------------------------->	
+	<table  id="headerbar"> 
+
+<div class="wrapper1">
+	<div class="wrapper">
+		<div class="nav-wrapper">
+			<div class="nav-left"></div>
+			<div class="nav">
+				<ul id="navigation">
+			   		<li class="active">
+						<a href="#">
+							<span class="menu-left"></span>
+							<span class="menu-mid">Acceuil</span>
+							<span class="menu-right"></span>
+						</a>
+					</li>
+			   		<li class="">
+						<a href="#">
+							<span class="menu-left"></span>
+							<span class="menu-mid">Contenu</span>
+							<span class="menu-right"></span>
+						</a>
+	            	   	<div class="sub">
+			   				<ul>
+			   					<li>
+									<a href="#">Internet-Windows</a>
+								</li>
+			   					<li>
+									<a href="#">General</a>
+								</li>
+			   					<li>
+									<a href="#">Langue française</a>
+								</li>
+			   					<li>
+									<a href="#">Langue arabe</a>
+								</li>
+			   				</ul>
+			   				<div class="btm-bg"></div>
+			   			</div>
+					</li>
+			   		<li class="">
+						<a href="#">
+							<span class="menu-left"></span>
+							<span class="menu-mid">Téléchargements</span>
+							<span class="menu-right"></span>
+						</a>
+			   			<div class="sub">
+			   				<ul>
+			   					<li>
+									<a href="#">Themes xoops</a>
+									</li>
+			   					<li>
+									<a href="#">Fiches d'arabe</a>
+								</li>
+			   					<li>
+									<a href="#">Autres</a>
+								</li>
+			   				</ul>
+			   				<div class="btm-bg"></div>
+			   			</div>
+			   		</li>
+			   		<li class="">
+						<a href="#">
+							<span class="menu-left"></span>
+							<span class="menu-mid">F.a.q</span>
+							<span class="menu-right"></span>
+						</a>
+	            	   	<div class="sub">
+			   				<ul>
+			   					<li>
+									<a href="#">Réparer Windows XP </a>
+								</li>
+			   					<li>
+									<a href="#">Optimiser Windows XP</a>
+								</li>
+			   					<li>
+									<a href="#">Réparer Windows Vista </a>
+								</li>
+								<li>
+									<a href="#">Optimiser Win Vista </a>
+								</li>
+			   				</ul>
+			   				<div class="btm-bg"></div>
+			   			</div>
+					</li>
+			   		<li class="">
+						<a href="#">
+							<span class="menu-left"></span>
+							<span class="menu-mid">Gallery</span>
+							<span class="menu-right"></span>
+						</a>
+	            	   	<div class="sub">
+			   				<ul>
+			   					<li>
+									<a href="#">Photos d'algerie</a>
+								</li>
+			   					<li>
+									<a href="#">Photos de bejaia</a>
+								</li>
+			   					<li>
+									<a href="#">Photos de kabylie</a>
+								</li>
+			   				</ul>
+			   				<div class="btm-bg"></div>
+			   			</div>
+					</li>
+			   		<li class="">
+						<a href="#">
+							<span class="menu-left"></span>
+							<span class="menu-mid">Plan du site</span>
+							<span class="menu-right"></span>
+						</a>
+	            	<li class="">
+						<a href="#">
+							<span class="menu-left"></span>
+							<span class="menu-mid">Livre d'or</span>
+							<span class="menu-right"></span>
+						</a>   	
+			   		<li class="last">
+						<a href="">
+							<span class="menu-left"></span>
+							<span class="menu-mid">Contact</span>
+							<span class="menu-right"></span>
+						</a>
+			   		</li>
+			   	</ul>
+			</div>
+			
+		</div>
+		
+</table>  
+
+
+
+
+
+
+
+
+
+<!-------------------------------------------------------------- Menu vertical -------------------------------------->
+     
+<div id="xo-menuc">
+    <ul id="xo-menuc">
+        <li><a href="<{xoAppUrl}>" accesskey="a" /><img  src="<{xoImgUrl images/menuc/Home.png}>" title="Acceuil" /></a></li>
+		<li><a href="<{xoAppUrl modules/contact/}>" /><img  src="<{xoImgUrl images/menuc/Envelope.png}>"  title="Contact" /></a></li>
+        <li><a href="<{xoAppUrl modules/sitemap/}>" /><img  src="<{xoImgUrl images/menuc/Favorites.png}>"  title="Plan du site" /></a></li>		
+		<li><a href="<{xoAppUrl modules/mydownloads/}>" /><img  src="<{xoImgUrl images/menuc/Download.png}>"  title="Téléchargements" /></a></li>		 
+		<li><a href="<{xoAppUrl modules/smartfaq/}>" /><img  src="<{xoImgUrl images/menuc/Help.png}>"  title="Foire au questions" /></a></li>
+        <li><a href="<{xoAppUrl modules/news/}>" /><img   src="<{xoImgUrl images/menuc/Globe-Connected.png}>" title="Articles" /></a></li>
+        <li><a href="<{xoAppUrl modules/extgallery/}>" /><img   src="<{xoImgUrl images/menuc/My-Pictures.png}>"  title="Mes photos" /></a></li>
+        <li><a href="<{xoAppUrl modules/news/index.php?storytopic=5/}>" /><img   src="<{xoImgUrl images/menuc/Clock.png}>"  title="Mes thèmes gratuits" /></a></li>
+        <li><a href="<{xoAppUrl modules/xfguestbook/}>" ><img   src="<{xoImgUrl images/menuc/Chat.png}>"    title="Livre d'or"/></a>          
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+<!-- End header -->
+
+
+
+<table cellspacing="0">
+    <tr>
+        <!-- Start left blocks loop -->
+        <{if $xoops_showlblock}>
+            <td id="leftcolumn">
+            <{foreach item=block from=$xoBlocks.canvas_left}>
+                <{includeq file="$theme_name/theme_blockleft.html"}>
+            <{/foreach}>
+            </td>
+        <{/if}>
+        <!-- End left blocks loop -->
+
+        <td id="centercolumn">
+            <!-- Display center blocks if any -->
+            <{if $xoBlocks.page_topleft or $xoBlocks.page_topcenter or $xoBlocks.page_topright}>
+                <table cellspacing="0">
+                    <tr>
+                        <td id="centerCcolumn" colspan="2">
+                        <!-- Start center-center blocks loop -->
+                        <{foreach item=block from=$xoBlocks.page_topcenter}>
+                            <{includeq file="$theme_name/theme_blockcenter_c.html"}>
+                        <{/foreach}>
+                        <!-- End center-center blocks loop -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="centerLcolumn">
+                        <!-- Start center-left blocks loop -->
+                        <{foreach item=block from=$xoBlocks.page_topleft}>
+                            <{includeq file="$theme_name/theme_blockcenter_l.html"}>
+                        <{/foreach}>
+                        <!-- End center-left blocks loop -->
+                        </td>
+                        <td id="centerRcolumn">
+                        <!-- Start center-right blocks loop -->
+                        <{foreach item=block from=$xoBlocks.page_topright}>
+                            <{includeq file="$theme_name/theme_blockcenter_r.html"}>
+                        <{/foreach}>
+                        <!-- End center-right blocks loop -->
+                        </td>
+                    </tr>
+                </table>
+            <{/if}>
+            <!-- End center top blocks loop -->
+
+            <!-- Start content module page -->
+            <{if $xoops_contents && ($xoops_contents != ' ') }><div id="content"><{$xoops_contents}></div><{/if}>
+            <!-- End content module -->
+
+            <!-- Start center bottom blocks loop -->
+            <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright or $xoBlocks.page_bottomcenter}>
+                <table cellspacing="0">
+                    <{if $xoBlocks.page_bottomcenter}>
+                        <tr>
+                            <td id="bottomCcolumn" colspan="2">
+                            <{foreach from=$xoBlocks.page_bottomcenter item=block}>
+                                <{include file="$theme_name/theme_blockcenter_c.html"}>
+                            <{/foreach}>
+                            </td>
+                        </tr>
+                    <{/if}>
+
+                    <{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright}>
+                        <tr>
+                            <td id="bottomLcolumn">
+                            <{foreach from=$xoBlocks.page_bottomleft item=block}>
+                                <{include file="$theme_name/theme_blockcenter_l.html"}>
+                            <{/foreach}>
+                            </td>
+
+                            <td id="bottomRcolumn">
+                                <{foreach from=$xoBlocks.page_bottomright item=block}>
+                                    <{include file="$theme_name/theme_blockcenter_r.html"}>
+                                <{/foreach}>
+                            </td>
+                        </tr>
+                    <{/if}>
+                </table>
+            <{/if}>
+            <!-- End center bottom blocks loop -->
+        </td>
+
+        <{if $xoops_showrblock}>
+            <td id="rightcolumn">
+            <!-- Start right blocks loop -->
+            <{foreach item=block from=$xoBlocks.canvas_right}>
+                <{includeq file="$theme_name/theme_blockright.html"}>
+            <{/foreach}>
+            <!-- End right blocks loop -->
+            </td>
+        <{/if}>
+    </tr>
+</table>
+
+<!-- Start footer -->
+<table cellspacing="0">
+<tr id="footerbar">
+    <td><{$xoops_footer}></td>
+</tr>
+</table>
+<!-- End footer -->
+
+<!--{xo-logger-output}-->
+</div> 
+</body> 
+</html>

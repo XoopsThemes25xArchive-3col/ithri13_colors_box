@@ -1,0 +1,186 @@
+@import url(style.css);
+
+#header {
+    margin :                0;
+    padding :               0;
+    height:                 110px;
+    background:             url(images/blue/xo-banner_bg.gif) center ;
+    color:                  #fff;
+    
+}
+
+
+
+/* --------- Navigation menu --------- */
+.nav {
+	background: #fff url(images/menuh/nav_bb.png) repeat-x;
+	
+		}
+.nav li {
+	background: url(images/menuh/splitb.png) no-repeat right center;
+	
+}
+	
+/* --------- End Navigation menu --------- */
+
+
+
+#leftcolumn .blockTitle, #rightcolumn .blockTitle {		
+    
+	background-image: url(images/blue/left.gif);
+	background-repeat: repeat-x;
+	background-position: left top; }
+#centercolumn   {}
+
+#centercolumn   .blockTitle {	color:  #05397b;
+	font-weight: bold;
+	margin-top: 3px;
+     background-repeat: repeat-x; 
+	background-image: url(images/blue/bg_banner.gif);
+  }
+
+#centercolumn th {
+	background-color: #1E90FF;
+	border-bottom-color: #05397b;
+}
+#centercolumn th a { color: #FFFFFF;}
+
+
+#mainmenu a {
+	display: block;
+	background-image: url(images/blue/santa.png);
+	background-repeat: no-repeat;
+	margin: 0; 
+	padding: 5px;  
+	font-size: .9em; 
+	font-weight: bold
+}
+#mainmenu a:hover {}
+#mainmenu a.menuTop {padding-left: 5px; }
+#mainmenu a.menuMain {padding-left: 5px;}
+#mainmenu a.menuSub {padding-left: 11px; color:#2A75C5;
+}
+#mainmenu a:hover {
+	text-decoration: none;
+	
+}
+#mainmenu a.menuTop, #mainmenu a.menuMain {padding-left: 16px; }
+#mainmenu a.menuTop {
+	border-top-style: none;
+}
+#mainmenu a.menuSub {
+	padding-left: 25px;
+	color: #636a6f;
+}
+#usermenu {
+	padding:4px;
+	font-size : .9em; 
+	font-weight: bold  
+	
+	}
+#usermenu a {
+	background-color: ; 
+	display: block; 
+	margin: 0; 
+	padding: 4px;  
+	font-weight : normal;
+}
+
+
+a {color:  #05397b; }
+
+
+
+li {	color: #666666; }
+.itemHead { color: #000000;}
+.itemTitle a {font-size: 1.1em; font-weight: bold;  color:  #05397b; }
+
+.head {
+	background-color: #1E90FF;
+	border-bottom-color: #05397b;
+}
+.head a {
+	color: #ADD3FA;
+}
+.head a:hover {
+	color: #5AB0EF;
+}
+
+.even, tr.even td {
+	background-color: #FFFFFF;
+	border: 1px solid #E8E8E8;
+}
+/*td.even:hover, tr.even td:hover, .odd:hover, tr.odd td:hover {
+	background-color: #F4FAFF;
+}
+*/
+
+.odd, tr.odd td {
+	background-color: #FFFFFF;
+	border: 1px solid #E8E8E8;
+	
+}
+.foot {
+	padding: 2px;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+
+
+#footerbar { 
+	background:  url(images/blue/footer.gif) center; 
+	font-size:1em;
+    font-weight: bold;	
+	height : 40px;
+	color: #FFFFFF;
+	}
+#footerbar td { vertical-align : middle; text-align:center;}
+
+#footerbar a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+#footerbar a:hover {
+	color: #000000;
+}
+
+/*============== Styles for pagenav =================*/
+#xo-pagenav {
+    margin:                 7px 0;
+    text-align:             center;
+    font-size:              1.05em;
+}
+#xo-pagenav a {
+    text-decoration:        none;
+}
+#xo-pagenav a:hover {
+    color:                  #fff;
+    background-color:       #05397b;
+    border:                 1px solid #fff;
+}
+.xo-pagact {
+    margin:                 0;
+    padding:                .2em .5em;
+    color:                  #fff;
+    background-color:        #05397b;
+    border:                 1px solid #fff;
+}
+.xo-counterpage, .xo-pagarrow {
+    margin:                 0;
+    padding:                .2em .5em;
+    color:                  #000;
+    background-color:       #fff;
+    border:                 1px solid #000;
+}
+.xo-counterpage:hover {}
+.xo-pagarrow {
+    letter-spacing:         0.2em;
+}
+
+
+
+
+
